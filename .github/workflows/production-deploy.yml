@@ -85,7 +85,6 @@ jobs:
       # 환경변수 주입
       - name: Environment Variables
         run: |
-          cd src/main/resources
           echo ${{ secrets.APPLICATION_SECRETS }} > .env
 
       # 서버로 .env 파일 전송
