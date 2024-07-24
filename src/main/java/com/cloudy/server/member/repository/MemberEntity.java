@@ -21,6 +21,7 @@ public class MemberEntity {
 
     public static MemberEntity from(Member member) {
         MemberEntity memberEntity = new MemberEntity();
+        memberEntity.id = member.getId();
         memberEntity.name = member.getName();
         memberEntity.username = member.getUsername();
         memberEntity.email = member.getEmail();
