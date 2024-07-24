@@ -92,14 +92,7 @@ public class SecurityConfig {
 		http
 			.authorizeHttpRequests((auth) -> auth
 				.requestMatchers(
-						HttpMethod.GET,
-						"/",
-						"/api/experience",
-						"/api/experience/**",
-						"/api/participation/experience/**",
-						"/api/upload/read-ex-image/**",
-						"/api/user/**",
-						"/api/review/user/**"
+						"/api/**"
 				).permitAll()
 				.anyRequest().authenticated());
 

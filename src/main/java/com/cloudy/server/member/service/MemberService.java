@@ -1,4 +1,7 @@
 package com.cloudy.server.member.service;
 
-public interface MemberService {
+import org.springframework.stereotype.Service;
+
+@Service
+public class MemberService {
 }
