@@ -10,7 +10,7 @@ spring:
     password: ${MYSQL_PASSWORD}
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     defer-datasource-initialization: false
     properties:
       hibernate:
@@ -25,6 +25,28 @@ spring:
       enabled: true
       max-file-size: 10MB
       max-request-size: 100MB
+  #registration
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-name: google
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            redirect-uri: ${GOOGLE_REDIRECT_URL}
+            authorization-code: ${GOOGLE_AUTH_CODE}
+            scope: profile,email
+            access-token-url: https://oauth2.googleapis.com/token
+            profile-url: https://www.googleapis.com/userinfo/v2/me
+  # jwt
+  jwt:
+    secret: ${JWT_SECRET}
+    expire-length: 86400000
+
+  client:
+    url: ${CLIENT_URL}
+    test-url: http://localhost:3000
 
 logging:
   level:
