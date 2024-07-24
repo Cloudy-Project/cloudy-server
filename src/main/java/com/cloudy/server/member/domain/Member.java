@@ -1,5 +1,6 @@
 package com.cloudy.server.member.domain;
 
+import com.cloudy.server.member.repository.MemberEntity;
 import lombok.Builder;
 import lombok.Getter;
 

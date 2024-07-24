@@ -38,4 +38,9 @@ public class MemberEntity {
                 .createdAt(createdAt)
                 .build();
     }
+
+    public MemberEntity update(String name) {
+        if (name != null) this.name = name;
+        return this;
+    }
 }
