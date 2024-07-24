@@ -4,6 +4,9 @@ import com.cloudy.server.answer.domain.Answer;
 import com.cloudy.server.letter.repository.LetterEntity;
 import com.cloudy.server.member.repository.MemberEntity;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -16,8 +19,10 @@ public class AnswerEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private LetterEntity letter;
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private MemberEntity member;
     private String content;
     @CreatedDate
@@ -40,5 +45,10 @@ public class AnswerEntity {
                 .content(content)
                 .createdAt(createdAt)
                 .build();
+    }
+
+    public AnswerEntity update(String content) {
+        this.content = content;
+        return this;
     }
 }
