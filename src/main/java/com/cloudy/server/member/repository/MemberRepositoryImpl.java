@@ -1,6 +1,7 @@
 package com.cloudy.server.member.repository;
 
 import com.cloudy.server.member.domain.Member;
+import com.cloudy.server.member.dto.request.MemberUpdateRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -24,5 +25,16 @@ public class MemberRepositoryImpl implements MemberRepository {
     @Override
     public Optional<Member> findById(Long id) {
         return memberJpaRepository.findById(id).map(MemberEntity::toModel);
+    }
+
+    @Override
+    public Optional<Member> update(Long memberId, String name) {
+        return memberJpaRepository.findById(memberId)
+                .map(me -> me.update(name).toModel());
+    }
+
+    @Override
+    public void deleteById(Long memberId) {
+        memberJpaRepository.deleteById(memberId);
     }
 }
