@@ -4,6 +4,8 @@ on:
   pull_request:
     branches: [ "main" ] # main branch에 PR을 보낼 때 실행
 
+permissions: write-all
+
 jobs:
   test:
     runs-on: ubuntu-latest
