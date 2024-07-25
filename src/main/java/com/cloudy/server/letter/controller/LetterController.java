@@ -32,7 +32,15 @@ public class LetterController implements LetterApi {
         Letter letter = letterService.findById(letterId);
         Answer answer = answerService.findByLetter(letter);
         String answerContent = answer != null ? answer.getContent() : null;
-        LetterResponse res = new LetterResponse(letter.getId(), letter.getMember().getName(), letter.getContent(), letter.getWriter(), answerContent);
+        Long answerId = answer != null ? answer.getId() : null;
+        LetterResponse res = new LetterResponse(
+                letter.getId(),
+                letter.getMember().getId(),
+                letter.getMember().getName(),
+                letter.getContent(),
+                letter.getWriter(),
+                answerId,
+                answerContent);
         return ResponseEntity.ok().body(res);
     }
 
