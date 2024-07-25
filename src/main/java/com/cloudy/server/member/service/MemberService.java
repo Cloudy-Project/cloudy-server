@@ -23,4 +23,9 @@ public class MemberService {
     public void deleteById(Long memberId) {
         memberRepository.deleteById(memberId);
     }
+
+    public Member findById(Long memberId) {
+        return memberRepository.findById(memberId)
+                .orElseThrow(() -> new RuntimeException("MEMBER NOT FOUND"));
+    }
 }
