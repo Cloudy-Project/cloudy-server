@@ -74,7 +74,7 @@ jobs:
       # 환경변수 주입
       - name: Environment Variables
         run: |
-          echo ${{ secrets.APPLICATION_SECRETS }} > .env
+          echo "${{ secrets.APPLICATION_SECRETS }}" > .env
 
       # 서버로 .env 파일 전송
       - name: Copy .env file to EC2
