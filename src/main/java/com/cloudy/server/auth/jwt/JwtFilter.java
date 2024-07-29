@@ -33,6 +33,12 @@ public class JwtFilter extends OncePerRequestFilter {
 		FilterChain filterChain) throws ServletException, IOException {
 		String requestUri = request.getRequestURI();
 
+		if (noAuthentication(request)) {
+			log.info("pass!");
+			filterChain.doFilter(request, response);
+			return;
+		}
+
 		if (requestUri.matches("^\\/login(?:\\/.*)?$")) {
 			filterChain.doFilter(request, response);
 			return;
@@ -119,5 +125,13 @@ public class JwtFilter extends OncePerRequestFilter {
 		SecurityContextHolder.getContext().setAuthentication(authToken);
 
 		filterChain.doFilter(request, response);
+	}
+
+	private boolean noAuthentication(HttpServletRequest req) {
+		String uri = req.getRequestURI();
+		String method = req.getMethod();
+		return uri.startsWith("/swagger-ui")
+				|| uri.startsWith("/api/letter") && !method.equals("DELETE")
+				|| uri.startsWith("/api/member") && method.equals("GET");
 	}
 }
