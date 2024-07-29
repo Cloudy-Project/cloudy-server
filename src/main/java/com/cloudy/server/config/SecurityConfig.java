@@ -97,7 +97,7 @@ public class SecurityConfig {
 				).permitAll()
 				.requestMatchers(HttpMethod.GET, "/api/letter/**")
 				.permitAll()
-				.requestMatchers(HttpMethod.POST, "/api/letter")
+				.requestMatchers(HttpMethod.POST, "/api/letter/**")
 				.permitAll()
 				.requestMatchers(HttpMethod.GET, "/api/member/**")
 				.permitAll()
