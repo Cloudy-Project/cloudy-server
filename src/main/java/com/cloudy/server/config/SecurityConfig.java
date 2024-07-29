@@ -118,6 +118,7 @@ public class SecurityConfig {
 						.logoutSuccessHandler((request, response, authentication) -> {
 							response.setStatus(200);
 						})
+						.clearAuthentication(true)
 						.deleteCookies("JSESSIONID", "token"));
 
 		//세션 설정 : STATELESS
