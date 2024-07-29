@@ -1,0 +1,9 @@
+package com.cloudy.server.answer.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface ReplyJpaRepository extends JpaRepository<ReplyEntity, Long> {
+    Optional<ReplyEntity> findByLetterId(Long letterId);
+}

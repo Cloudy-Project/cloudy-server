@@ -1,7 +1,7 @@
 package com.cloudy.server.letter.controller;
 
-import com.cloudy.server.answer.domain.Answer;
-import com.cloudy.server.answer.service.AnswerService;
+import com.cloudy.server.answer.domain.Reply;
+import com.cloudy.server.answer.service.ReplyService;
 import com.cloudy.server.auth.security.LoginMember;
 import com.cloudy.server.letter.domain.Letter;
 import com.cloudy.server.letter.dto.request.LetterRequest;
@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LetterController implements LetterApi {
     private final LetterService letterService;
-    private final AnswerService answerService;
+    private final ReplyService replyService;
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody LetterRequest letterRequest) {
@@ -30,9 +30,9 @@ public class LetterController implements LetterApi {
     @GetMapping("/{letterId}")
     public ResponseEntity<LetterResponse> findById(@PathVariable("letterId") Long letterId) {
         Letter letter = letterService.findById(letterId);
-        Answer answer = answerService.findByLetter(letter);
-        String answerContent = answer != null ? answer.getContent() : null;
-        Long answerId = answer != null ? answer.getId() : null;
+        Reply reply = replyService.findByLetter(letter);
+        String answerContent = reply != null ? reply.getContent() : null;
+        Long answerId = reply != null ? reply.getId() : null;
         LetterResponse res = new LetterResponse(
                 letter.getId(),
                 letter.getMember().getId(),

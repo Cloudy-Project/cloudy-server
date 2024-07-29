@@ -6,6 +6,6 @@ public record LetterResponse(
         String memberName,
         String content,
         String writer,
-        Long answerId,
-        String answerContent) {
+        Long replyId,
+        String replyContent) {
 }

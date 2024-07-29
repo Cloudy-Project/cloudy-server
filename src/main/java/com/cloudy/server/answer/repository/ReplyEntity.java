@@ -1,10 +1,9 @@
 package com.cloudy.server.answer.repository;
 
-import com.cloudy.server.answer.domain.Answer;
+import com.cloudy.server.answer.domain.Reply;
 import com.cloudy.server.letter.repository.LetterEntity;
 import com.cloudy.server.member.repository.MemberEntity;
 import jakarta.persistence.*;
-import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.data.annotation.CreatedDate;
@@ -14,7 +13,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-public class AnswerEntity {
+public class ReplyEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,17 +27,17 @@ public class AnswerEntity {
     @CreatedDate
     private LocalDateTime createdAt;
 
-    public static AnswerEntity from(Answer answer) {
-        AnswerEntity answerEntity = new AnswerEntity();
-        answerEntity.letter = LetterEntity.from(answer.getLetter());
-        answerEntity.member = MemberEntity.from(answer.getMember());
-        answerEntity.content = answer.getContent();
+    public static ReplyEntity from(Reply reply) {
+        ReplyEntity replyEntity = new ReplyEntity();
+        replyEntity.letter = LetterEntity.from(reply.getLetter());
+        replyEntity.member = MemberEntity.from(reply.getMember());
+        replyEntity.content = reply.getContent();
 
-        return answerEntity;
+        return replyEntity;
     }
 
-    public Answer toModel() {
-        return Answer.builder()
+    public Reply toModel() {
+        return Reply.builder()
                 .id(id)
                 .letter(letter.toModel())
                 .member(member.toModel())
@@ -47,7 +46,7 @@ public class AnswerEntity {
                 .build();
     }
 
-    public AnswerEntity update(String content) {
+    public ReplyEntity update(String content) {
         this.content = content;
         return this;
     }

@@ -8,7 +8,7 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 @Getter
-public class Answer {
+public class Reply {
     private Long id;
     private Letter letter;
     private Member member;
@@ -16,7 +16,7 @@ public class Answer {
     private LocalDateTime createdAt;
 
     @Builder
-    public Answer(Long id, Letter letter, Member member, String content, LocalDateTime createdAt) {
+    public Reply(Long id, Letter letter, Member member, String content, LocalDateTime createdAt) {
         this.id = id;
         this.letter = letter;
         this.member = member;
