@@ -99,6 +99,8 @@ public class SecurityConfig {
 				.permitAll()
 				.requestMatchers(HttpMethod.POST, "/api/letter/**")
 				.permitAll()
+				.requestMatchers(HttpMethod.POST, "/api/letter")
+				.permitAll()
 				.requestMatchers(HttpMethod.GET, "/api/member/**")
 				.permitAll()
 				.anyRequest().authenticated());
