@@ -10,15 +10,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CorsMvcConfig implements WebMvcConfigurer {
 
-	@Value("${spring.client.url}")
-	private String clientUrl;
-
 	@Value("${spring.client.test-url}")
 	private String testUrl;
 
 	@Override
 	public void addCorsMappings(CorsRegistry corsRegistry) {
-		log.info("client URL is... {}", clientUrl);
 		corsRegistry.addMapping("/**")
 			.allowCredentials(true)
 			.allowedHeaders("*")
