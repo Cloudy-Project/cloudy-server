@@ -50,7 +50,7 @@ public class SecurityConfig {
 
 					CorsConfiguration configuration = new CorsConfiguration();
 
-					configuration.setAllowedOrigins(Collections.singletonList(clientUrl));
+					configuration.setAllowedOrigins(Collections.singletonList("https://cloudy.cloudy.n-e.kr"));
 					configuration.setAllowedOrigins(Collections.singletonList(testUrl));
 					configuration.setAllowedMethods(Collections.singletonList("*"));
 					configuration.setAllowCredentials(true);
