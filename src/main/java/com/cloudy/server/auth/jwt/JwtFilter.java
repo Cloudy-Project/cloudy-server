@@ -132,6 +132,7 @@ public class JwtFilter extends OncePerRequestFilter {
 		String method = req.getMethod();
 		return uri.startsWith("/swagger-ui")
 				|| uri.startsWith("/api/letter") && !method.equals("DELETE")
-				|| uri.startsWith("/api/member") && method.equals("GET");
+				|| uri.startsWith("/api/member") && method.equals("GET")
+				|| uri.startsWith("/error");
 	}
 }
