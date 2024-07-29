@@ -35,4 +35,10 @@ public class MemberController implements MemberApi {
         MemberSimpleResponse res = new MemberSimpleResponse(member.getId(), member.getName());
         return ResponseEntity.ok().body(res);
     }
+
+    @PostMapping
+    public ResponseEntity<?> isLogin(@LoginMember Long memberId) {
+        if (memberId.equals(0L)) return ResponseEntity.status(404).build();
+        else return ResponseEntity.ok().build();
+    }
 }

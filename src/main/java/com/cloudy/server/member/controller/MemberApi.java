@@ -22,4 +22,7 @@ public interface MemberApi {
 
     @Operation(summary = "회원 정보 조회")
     ResponseEntity<MemberSimpleResponse> findById(@PathVariable("memberId") Long memberId);
+
+    @Operation(summary = "로그인 여부 확인")
+    ResponseEntity<?> isLogin(@LoginMember Long memberId);
 }
