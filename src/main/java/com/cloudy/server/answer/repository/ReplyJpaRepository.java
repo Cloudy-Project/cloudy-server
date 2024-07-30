@@ -6,4 +6,6 @@ import java.util.Optional;
 
 public interface ReplyJpaRepository extends JpaRepository<ReplyEntity, Long> {
     Optional<ReplyEntity> findByLetterId(Long letterId);
+
+    Optional<ReplyEntity> findByIdAndMemberId(Long id, Long memberId);
 }

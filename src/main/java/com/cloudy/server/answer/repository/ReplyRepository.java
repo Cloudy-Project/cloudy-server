@@ -12,5 +12,5 @@ public interface ReplyRepository {
 
     Optional<Reply> findById(Long id);
 
-    Optional<Reply> update(ReplyUpdateRequest replyUpdateRequest);
+    Optional<Reply> update(Long id, ReplyUpdateRequest replyUpdateRequest);
 }

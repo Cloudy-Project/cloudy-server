@@ -4,6 +4,7 @@ import com.cloudy.server.answer.domain.Reply;
 import com.cloudy.server.letter.repository.LetterEntity;
 import com.cloudy.server.member.repository.MemberEntity;
 import jakarta.persistence.*;
+import lombok.Getter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.data.annotation.CreatedDate;
@@ -11,6 +12,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
+@Getter
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 public class ReplyEntity {

@@ -14,6 +14,9 @@ public class MemberService {
 
     @Transactional
     public Member update(Long memberId, MemberUpdateRequest memberUpdateRequest) {
+        if (!memberId.equals(memberUpdateRequest.id())) {
+            throw new RuntimeException("ONLY MEMBER CAN UPDATE NAME");
+        }
         String name = memberUpdateRequest.name();
         if (name == null) throw new RuntimeException("NAME NOT ALLOW NULL");
         return memberRepository.update(memberId, name)

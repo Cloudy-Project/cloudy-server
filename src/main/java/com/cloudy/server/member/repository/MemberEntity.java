@@ -2,11 +2,13 @@ package com.cloudy.server.member.repository;
 
 import com.cloudy.server.member.domain.Member;
 import jakarta.persistence.*;
+import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
+@Getter
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 public class MemberEntity {
