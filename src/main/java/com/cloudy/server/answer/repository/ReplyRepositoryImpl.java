@@ -28,8 +28,8 @@ public class ReplyRepositoryImpl implements ReplyRepository {
     }
 
     @Override
-    public Optional<Reply> update(ReplyUpdateRequest replyUpdateRequest) {
-        return replyJpaRepository.findById(replyUpdateRequest.id())
+    public Optional<Reply> update(Long id, ReplyUpdateRequest replyUpdateRequest) {
+        return replyJpaRepository.findByIdAndMemberId(replyUpdateRequest.id(), id)
                 .map(ae -> ae.update(replyUpdateRequest.content()).toModel());
     }
 }

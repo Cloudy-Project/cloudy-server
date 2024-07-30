@@ -24,9 +24,12 @@ public class ReplyService {
     }
 
     @Transactional
-    public Reply create(ReplyCreateRequest replyCreateRequest) {
+    public Reply create(Long id, ReplyCreateRequest replyCreateRequest) {
         Letter letter = letterRepository.findById(replyCreateRequest.letterId())
                 .orElseThrow(() -> new RuntimeException("LETTER NOT FOUND"));
+        if (!letter.getMember().getId().equals(id)) {
+            throw new RuntimeException("ONLY LETTER OWNER CAN REPLY");
+        }
         Member member = memberRepository.findById(replyCreateRequest.memberId())
                 .orElseThrow(() -> new RuntimeException("MEMBER NOT FOUND"));
         Reply reply = Reply.builder()
@@ -38,8 +41,8 @@ public class ReplyService {
     }
 
     @Transactional
-    public Reply update(ReplyUpdateRequest replyUpdateRequest) {
-        return replyRepository.update(replyUpdateRequest)
+    public Reply update(Long id, ReplyUpdateRequest replyUpdateRequest) {
+        return replyRepository.update(id, replyUpdateRequest)
                 .orElseThrow(() -> new RuntimeException("ANSWER NOT FOUND"));
     }
 }
