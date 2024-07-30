@@ -25,6 +25,7 @@ public class ReplyEntity {
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private MemberEntity member;
+    @Column(columnDefinition = "TEXT")
     private String content;
     @CreatedDate
     private LocalDateTime createdAt;

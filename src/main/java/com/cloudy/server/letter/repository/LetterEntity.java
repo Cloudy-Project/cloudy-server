@@ -20,6 +20,7 @@ public class LetterEntity {
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private MemberEntity member;
+    @Column(columnDefinition = "TEXT")
     private String content;
     private String writer;
     @CreatedDate
