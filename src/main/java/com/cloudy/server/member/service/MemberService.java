@@ -18,7 +18,7 @@ public class MemberService {
             throw new RuntimeException("ONLY MEMBER CAN UPDATE NAME");
         }
         String name = memberUpdateRequest.name();
-        if (name == null) throw new RuntimeException("NAME NOT ALLOW NULL");
+        if (name.isEmpty()) throw new RuntimeException("NAME NOT ALLOW NULL");
         return memberRepository.update(memberId, name)
                 .orElseThrow(() -> new RuntimeException("MEMBER NOT FOUND"));
     }
