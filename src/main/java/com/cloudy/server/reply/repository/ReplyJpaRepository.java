@@ -1,4 +1,4 @@
-package com.cloudy.server.answer.repository;
+package com.cloudy.server.reply.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

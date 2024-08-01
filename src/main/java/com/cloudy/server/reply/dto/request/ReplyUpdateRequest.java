@@ -1,4 +1,4 @@
-package com.cloudy.server.answer.dto.request;
+package com.cloudy.server.reply.dto.request;
 
 public record ReplyUpdateRequest(
         Long id,

@@ -1,7 +1,7 @@
-package com.cloudy.server.answer.repository;
+package com.cloudy.server.reply.repository;
 
-import com.cloudy.server.answer.domain.Reply;
-import com.cloudy.server.answer.dto.request.ReplyUpdateRequest;
+import com.cloudy.server.reply.domain.Reply;
+import com.cloudy.server.reply.dto.request.ReplyUpdateRequest;
 
 import java.util.Optional;
 

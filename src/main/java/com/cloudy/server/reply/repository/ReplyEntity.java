@@ -1,6 +1,6 @@
-package com.cloudy.server.answer.repository;
+package com.cloudy.server.reply.repository;
 
-import com.cloudy.server.answer.domain.Reply;
+import com.cloudy.server.reply.domain.Reply;
 import com.cloudy.server.letter.repository.LetterEntity;
 import com.cloudy.server.member.repository.MemberEntity;
 import jakarta.persistence.*;

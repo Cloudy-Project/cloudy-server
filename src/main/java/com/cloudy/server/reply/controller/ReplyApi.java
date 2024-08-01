@@ -1,8 +1,8 @@
-package com.cloudy.server.answer.controller;
+package com.cloudy.server.reply.controller;
 
-import com.cloudy.server.answer.dto.request.ReplyCreateRequest;
-import com.cloudy.server.answer.dto.request.ReplyUpdateRequest;
-import com.cloudy.server.answer.dto.response.ReplyResponse;
+import com.cloudy.server.reply.dto.request.ReplyCreateRequest;
+import com.cloudy.server.reply.dto.request.ReplyUpdateRequest;
+import com.cloudy.server.reply.dto.response.ReplyResponse;
 import com.cloudy.server.auth.security.LoginMember;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

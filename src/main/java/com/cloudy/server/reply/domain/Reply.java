@@ -1,4 +1,4 @@
-package com.cloudy.server.answer.domain;
+package com.cloudy.server.reply.domain;
 
 import com.cloudy.server.letter.domain.Letter;
 import com.cloudy.server.member.domain.Member;

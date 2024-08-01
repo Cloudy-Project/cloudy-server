@@ -1,9 +1,9 @@
-package com.cloudy.server.answer.service;
+package com.cloudy.server.reply.service;
 
-import com.cloudy.server.answer.domain.Reply;
-import com.cloudy.server.answer.dto.request.ReplyCreateRequest;
-import com.cloudy.server.answer.dto.request.ReplyUpdateRequest;
-import com.cloudy.server.answer.repository.ReplyRepository;
+import com.cloudy.server.reply.domain.Reply;
+import com.cloudy.server.reply.dto.request.ReplyCreateRequest;
+import com.cloudy.server.reply.dto.request.ReplyUpdateRequest;
+import com.cloudy.server.reply.repository.ReplyRepository;
 import com.cloudy.server.letter.domain.Letter;
 import com.cloudy.server.letter.repository.LetterRepository;
 import com.cloudy.server.member.domain.Member;

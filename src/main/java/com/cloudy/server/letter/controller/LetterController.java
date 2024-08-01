@@ -1,7 +1,7 @@
 package com.cloudy.server.letter.controller;
 
-import com.cloudy.server.answer.domain.Reply;
-import com.cloudy.server.answer.service.ReplyService;
+import com.cloudy.server.reply.domain.Reply;
+import com.cloudy.server.reply.service.ReplyService;
 import com.cloudy.server.auth.security.LoginMember;
 import com.cloudy.server.letter.domain.Letter;
 import com.cloudy.server.letter.dto.request.LetterRequest;

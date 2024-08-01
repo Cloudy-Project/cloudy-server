@@ -1,10 +1,10 @@
-package com.cloudy.server.answer.controller;
+package com.cloudy.server.reply.controller;
 
-import com.cloudy.server.answer.domain.Reply;
-import com.cloudy.server.answer.dto.request.ReplyCreateRequest;
-import com.cloudy.server.answer.dto.request.ReplyUpdateRequest;
-import com.cloudy.server.answer.dto.response.ReplyResponse;
-import com.cloudy.server.answer.service.ReplyService;
+import com.cloudy.server.reply.domain.Reply;
+import com.cloudy.server.reply.dto.request.ReplyCreateRequest;
+import com.cloudy.server.reply.dto.request.ReplyUpdateRequest;
+import com.cloudy.server.reply.dto.response.ReplyResponse;
+import com.cloudy.server.reply.service.ReplyService;
 import com.cloudy.server.auth.security.LoginMember;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
